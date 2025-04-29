@@ -1,0 +1,115 @@
+.radio-input input {
+    display: none;
+}
+
+.radio-input {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    background: rgb(192, 192, 192);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0px 87px 78px -39px rgba(0,0,0,0.4);
+    width: 320px;
+}
+
+.info {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.question {
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: 800;
+}
+
+.radio-input  label {
+    display: flex;
+    background-color: rgb(247, 247, 247);
+    padding: 14px;
+    margin: 8px 0 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgba(187, 187, 187, 0.164);
+    color: rgb(0, 0, 0);
+    transition: .3s ease;
+}
+
+.radio-input  label:hover {
+    background-color: rgba(24, 24, 24, 0.13);
+    border: 1px solid rgb(196, 196, 196);
+}
+
+.result {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 12px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.result.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.radio-input.correct {
+    background: #d4f5d4;
+    transition: background 0.4s ease;
+}
+
+.radio-input.wrong {
+    background: #ffd6d6;
+    animation: shake 0.4s;
+    transition: background 0.4s ease;
+}
+
+#submitBtn {
+    background-color: #4CAF50; /* Hijau */
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#submitBtn:hover {
+    background-color: #45a049; /* Hijau sedikit lebih gelap */
+}
+
+/* Tambahkan gaya untuk label yang dipilih */
+.radio-input input:checked + label {
+    border-color: #007bff; /* Biru saat dipilih */
+    background-color: rgba(0, 123, 255, 0.1); /* Efek latar belakang biru transparan */
+}
+
+.correct label {
+    border-color: green;
+    background-color: rgba(0, 255, 0, 0.1); /* Hijau jika benar */
+}
+
+.wrong label {
+    border-color: red;
+    background-color: rgba(255, 0, 0, 0.1); /* Merah jika salah */
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
